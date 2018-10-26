@@ -20,7 +20,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Global variables for the view
-app.locals.mainTitle = 'Nodepop';
+app.locals.mainTitle = 'MelPop';
 app.locals.mainDescription = 'Connecting Buyers and Sellers Locally';
 
 // Connect to the database and load the models

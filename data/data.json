@@ -1,4 +1,11 @@
 {
+    "users": [
+        {
+            "name": "John Doe",
+            "email": "user@example.com",
+            "password": "1234"
+        }
+    ],
     "ads": [
         {
             "forSale": true,

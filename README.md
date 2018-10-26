@@ -1,10 +1,10 @@
-# Nodepop
+# Melpop
 
 [![MIT License][license-image]][license-url]
 
 Website and API to handle second hand products built with Nodejs, Express and MongoDB.
 
-Live demo available on https://melnodepop.herokuapp.com/
+Live demo available on https://melpop.herokuapp.com/
 
 ## Prerequisites
 
@@ -21,13 +21,13 @@ These instructions will get you a copy of the project up and running on your loc
 Download the repository from GitHub
 
 ```shell
-git clone https://github.com/melquiadesvazquez/Nodepop.git
+git clone https://github.com/melquiadesvazquez/MelPop.git
 ```
 
 Install de project with NPM
 
 ```shell
-cd Nodepop
+cd MelPop
 npm install
 ```
 
@@ -77,24 +77,24 @@ The four primary or most-commonly-used HTTP methods are implemented:
 
 ## Testing
 
-Check the live demo [here](https://melnodepop.herokuapp.com/)
+Check the live demo [here](https://melpop.herokuapp.com/)
 
 Showing all the ads listing 6 by page (default):
 
 + Website &ndash; <http://localhost:3003/ads>
-  
-    ![Nodepop web version](https://raw.githubusercontent.com/melquiadesvazquez/Nodepop/master/public/images/misc/web.jpg)
+
+    ![MelPop web version](https://raw.githubusercontent.com/melquiadesvazquez/MelPop/master/public/images/misc/web.jpg)
 
 Showing all the ads with `price` 50 or less with the `tag` *lifestyle* sorted by `name` listing 3 by page and sorted by price:
 
 + API &ndash; <http://localhost:3003/apiv1/ads?limit=3&tag=lifestyle&price=-50&sort=price>
     ```json
-    {  
+    {
         "success":true,
-        "result":[  
-            {  
+        "result":[
+            {
                 "forSale":false,
-                "tags":[  
+                "tags":[
                     "lifestyle"
                 ],
                 "_id":"5b6706e27641bd4ad078b3f7",
@@ -103,9 +103,9 @@ Showing all the ads with `price` 50 or less with the `tag` *lifestyle* sorted by
                 "picture":"http://localhost:3003/images/ads/football-1419954_1920.jpg",
                 "created":"2018-08-05T14:17:06.540Z"
             },
-            {  
+            {
                 "forSale":true,
-                "tags":[  
+                "tags":[
                     "lifestyle",
                     "work"
                 ],
@@ -115,9 +115,9 @@ Showing all the ads with `price` 50 or less with the `tag` *lifestyle* sorted by
                 "picture":"http://localhost:3003/images/ads/shoes-1638873_1920.jpg",
                 "created":"2018-08-05T14:17:06.542Z"
             },
-            {  
+            {
                 "forSale":false,
-                "tags":[  
+                "tags":[
                     "lifestyle"
                 ],
                 "_id":"5b6706e27641bd4ad078b3fd",
@@ -127,12 +127,12 @@ Showing all the ads with `price` 50 or less with the `tag` *lifestyle* sorted by
                 "created":"2018-08-05T14:17:06.541Z"
             }
         ],
-        "pages":[  
-            {  
+        "pages":[
+            {
                 "number":1,
                 "url":"/apiv1/ads?limit=3&tag=lifestyle&price=-50&sort=price&page=1"
             },
-            {  
+            {
                 "number":2,
                 "url":"/apiv1/ads?limit=3&tag=lifestyle&price=-50&sort=price&page=2"
             }
@@ -142,24 +142,24 @@ Showing all the ads with `price` 50 or less with the `tag` *lifestyle* sorted by
 Listing an ad by ID:
 
 + API &ndash; <http://localhost:3003/apiv1/ads/:id>
-  
+
 Listing the number of products per tag:
 
 + API &ndash; <http://localhost:3003/apiv1/ads/tags>
     ```json
-    {  
+    {
         "success":true,
-        "result":[  
-            {  
+        "result":[
+            {
                 "lifestyle":8
             },
-            {  
+            {
                 "work":4
             },
-            {  
+            {
                 "motor":3
             },
-            {  
+            {
                 "mobile":3
             }
         ]
@@ -168,7 +168,7 @@ Listing the number of products per tag:
 
 Creating a product:
 
-+ Place the product's picture on `Nodepop/public/images/ads`
++ Place the product's picture on `MelPop/public/images/ads`
 + API (POST x-www-form-urlencoded) &ndash; <http://localhost:3003/apiv1/ads/>
     ```json
     {
@@ -189,11 +189,11 @@ Deleting a product:
 + API (DELETE x-www-form-urlencoded) &ndash; <http://localhost:3003/apiv1/ads/:id>
 + The deleted product will be returned
     ```json
-    {  
+    {
         "success": true,
-        "result": {  
+        "result": {
             "forSale":false,
-            "tags": [  
+            "tags": [
                 "lifestyle",
                 "mobile"
             ],

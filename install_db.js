@@ -3,20 +3,21 @@
 require('dotenv').config();
 
 const readline = require('readline');
-const ads = require('./data/ads.json').ads;
 const conn = require('./lib/connectMongoose');
+const User = require('./models/User');
 const Ad = require('./models/Ad');
+const {users, ads} = require('./data/data.json');
 
 conn.once('open', async () => {
   try {
     const response = await askUser('Are you sure you want to reset the database? (no) ');
 
-    if (response.toLowerCase() !== 'yes') {
+    if (response.toLowerCase() !== 'yes' && response.toLowerCase() !== 'y') {
       console.log('Database reset aborted');
       process.exit();
     }
 
-    await initAds(ads);
+    await initData(users, ads);
     conn.close();
     process.exit();
   } catch (err) {
@@ -41,12 +42,16 @@ function askUser (question) {
   });
 }
 
-async function initAds (ads) {
-  // Delete the existing ads
-  const deleted = await Ad.deleteMany();
-  console.log(`Deleted ${deleted.n} ads.`);
+async function initData (users, ads) {
+  // Delete the existing data
+  const deletedUsers = await User.deleteMany();
+  const deletedAds = await Ad.deleteMany();
+  console.log(`Deleted ${deletedUsers.n} users.`);
+  console.log(`Deleted ${deletedAds.n} ads.`);
 
-  // Load the default ads
-  const inserted = await Ad.insertMany(ads);
-  console.log(`Loaded ${inserted.length} ads.`);
+  // Load the default data
+  const insertedUsers = await User.insertMany(users);
+  const insertedAds = await Ad.insertMany(ads);
+  console.log(`Loaded ${insertedUsers.length} users.`);
+  console.log(`Loaded ${insertedAds.length} ads.`);
 }

@@ -6,12 +6,16 @@ const router = express.Router();
 const createError = require('http-errors');
 const { query, validationResult } = require('express-validator/check');
 const { isAPI, isSubset } = require('../lib/utils');
+const jwtAuth = require('../lib/jwtAuth');
 const Ad = require('../models/Ad');
+
+// Autentication with JWT only on the API
+router.get('/apiv1/*', jwtAuth());
 
 // Maximum X items per page with Y in total
 router.use(paginate.middleware(parseInt(process.env.API_PAGE_ITEMS_LIMIT), parseInt(process.env.API_TOTAL_ITEMS_LIMIT)));
 
-/* GET home page. */
+// GET home page.
 router.get('/', function (req, res, next) {
   res.render('index');
 });
