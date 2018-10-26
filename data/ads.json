@@ -1,0 +1,127 @@
+{
+    "ads": [
+        {
+            "forSale": true,
+            "tags": [
+                "lifestyle",
+                "motor"
+            ],
+            "name": "Bicycle",
+            "price": 230.15,
+            "picture": "bicycle-407215_1920.jpg"
+        },
+        {
+            "forSale": false,
+            "tags": [
+                "lifestyle",
+                "mobile"
+            ],
+            "name": "iPhone 6S",
+            "price": 50,
+            "picture": "iphone-410311_1280.jpg"
+        },
+        {
+            "forSale": false,
+            "tags": [
+                "lifestyle"
+            ],
+            "name": "Football ball",
+            "price": 11,
+            "picture": "football-1419954_1920.jpg"
+        },
+        {
+            "forSale": true,
+            "tags": [
+                "work"
+            ],
+            "name": "Iron",
+            "price": 59,
+            "picture": "ironing-403074_1920.jpg"
+        },
+        {
+            "forSale": true,
+            "tags": [
+                "lifestyle"
+            ],
+            "name": "Pearl necklace",
+            "price": 250,
+            "picture": "jewelry-420018_1920.jpg"
+        },
+        {
+            "forSale": false,
+            "tags": [
+                "lifestyle"
+            ],
+            "name": "Pocket watch",
+            "price": 65,
+            "picture": "pocket-watch-2036304_1920.jpg"
+        },
+        {
+            "forSale": true,
+            "tags": [
+                "mobile"
+            ],
+            "name": "Radio",
+            "price": 15,
+            "picture": "radio-821602_1920.jpg"
+        },
+        {
+            "forSale": false,
+            "tags": [
+                "work"
+            ],
+            "name": "Typewriter",
+            "price": 112,
+            "picture": "typewriter-1048491_1920.jpg"
+        },
+        {
+            "forSale": false,
+            "tags": [
+                "lifestyle"
+            ],
+            "name": "TV",
+            "price": 45.50,
+            "picture": "tv-1844964_1920.jpg"
+        },
+        {
+            "forSale": true,
+            "tags": [
+                "motor"
+            ],
+            "name": "Motorbike",
+            "price": 1500,
+            "picture": "vintage-1283299_1920.jpg"
+        },
+        {
+            "forSale": true,
+            "tags": [
+                "lifestyle",
+                "work"
+            ],
+            "name": "Shoes",
+            "price": 40,
+            "picture": "shoes-1638873_1920.jpg"
+        },
+        {
+            "forSale": true,
+            "tags": [
+                "work",
+                "mobile"
+            ],
+            "name": "Ipad Air 2",
+            "price": 410,
+            "picture": "bar-621033_1920.jpg",
+            "created": "2018-08-04T11:41:36.605Z"
+        },
+        {
+            "forSale": false,
+            "tags": [
+                "lifestyle",
+                "motor"
+            ],
+            "name": "Car",
+            "price": 9100,
+            "picture": "cuba-1197800_1920.jpg"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+.btn-group {
+    display: flex;
+    flex: 1 0 0;
+}
+
+.btn-group .btn {
+    flex: 1;
+}
+
+.block-sm-down {
+    display:block;
+}
+
+@media (min-width: 768px) {
+    .block-sm-down {
+        display:inline-block;
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true
+    },
+    "extends": "standard",
+    "rules": {
+        "indent": ["error", 2],
+        "semi": 0
+    }
+}
