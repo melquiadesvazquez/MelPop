@@ -1,0 +1,56 @@
+<form id="formSearch">
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <label for="name" class="sr-only">
+        <%= __('Product') %></label>
+      <div class="input-group">
+        <input id="name" name="name" type="text" class="form-control" placeholder="<%= __('i.e. Bike') %>" value="<%= query.name %>">
+        <input id="price" name="price" type="text" class="form-control col-sm-4" placeholder="<%= __('i.e. 50-300') %>"
+          value="<%= query.price %>">
+        <div class="input-group-append">
+          <button type="submit" class="btn btn-primary">
+            <%= __('Find') %></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+      <label for="name" class="sr-only">
+        <%= __('Product') %></label>
+      <div class="btn-group">
+        <a href="./ads" class="btn btn-secondary">
+          <%= __('Show all') %></a>
+        <a href="./ads?forSale=false" class="btn btn-warning">
+          <%= __('Sell') %></a>
+        <a href="./ads?forSale=true" class="btn btn-info">
+          <%= __('Buy') %></a>
+        <a href="#" title="<%= __('Sort by') %>" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+          data-toggle="dropdown">
+          <span class="sr-only">
+            <%= __('Sort by') %></span>
+        </a>
+        <div class="dropdown-menu">
+          <a href="./ads?sort=name" class="dropdown-item">
+            <%= __('Sort by name') %></a>
+          <a href="./ads?sort=price" class="dropdown-item">
+            <%= __('Cheapest first') %></a>
+          <a href="./ads?sort=-price" class="dropdown-item">
+            <%= __('Cheapest last') %></a>
+          <a href="./ads?sort=-created" class="dropdown-item">
+            <%= __('Newest first') %></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="input-group">
+        <div class="btn-group" id="tags">
+          <% tags.forEach(function(tag) { %>
+          <a href="./ads?tag=<%= tag %>" class="btn btn-outline-secondary">
+            <%= __(tag) %></a>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

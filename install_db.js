@@ -49,6 +49,11 @@ async function initData (users, ads) {
   console.log(`Deleted ${deletedUsers.n} users.`);
   console.log(`Deleted ${deletedAds.n} ads.`);
 
+  // Hash the passwords
+  for (let i = 0; i < users.length; i++) {
+    users[i].password = await User.hashPassword(users[i].password)
+  };
+
   // Load the default data
   const insertedUsers = await User.insertMany(users);
   const insertedAds = await Ad.insertMany(ads);

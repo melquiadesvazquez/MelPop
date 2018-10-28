@@ -1,0 +1,7 @@
+<% getLocales().forEach(lang => { %>
+<% if (lang != getLocale()) { %>
+<a href="/lang/<%= lang %>" class="btn btn-outline-secondary">
+  <%= __(`Switch to ${lang.toUpperCase()}`) %>
+</a>
+<% }; %>
+<% }); %>

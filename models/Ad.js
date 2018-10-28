@@ -1,7 +1,7 @@
 'use strict';
 
 const mongoose = require('mongoose');
-const tags = ['lifestyle', 'work', 'motor', 'mobile'];
+const tags = process.env.ADS_TAGS.split(',');
 
 // Defining the schema
 const adSchema = mongoose.Schema({

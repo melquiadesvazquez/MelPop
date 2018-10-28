@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    <%= mainTitle %>
+  </title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+    crossorigin="anonymous">
+
+  <!-- Custom CSS -->
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <main>
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">
+          <%= mainTitle %>
+        </h1>
+        <p class="lead text-muted">
+          <%= __(mainDescription) %>
+        </p>
+        <p>
+          <% if (typeof session === 'undefined' || !session.authUser) { %>
+          <a href="/login" class="btn btn-dark">
+            <%= __('Login') %>
+          </a>
+          <% } else { %>
+          <a href="/ads" class="btn btn-dark">
+            <%= __('Ads') %>
+          </a>
+          <a href="/<%= apiPath %>/ads?token=<%= session.authUser.token %>" class="btn btn-dark">
+            <%= __('Api') %>
+          </a>
+          <a href="/new" class="btn btn-dark">
+            <%= __('New ad') %>
+          </a>
+          <a href="/logout" class="btn btn-danger">
+            <%= __('logout') %>
+          </a>
+          <% } %>
+
+          <% include lang.html } %>
+        </p>
+        <% if (typeof ads != 'undefined') { %>
+        <% include search.html } %>
+        <% } %>
+
+
+      </div>
+    </section>
