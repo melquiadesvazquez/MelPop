@@ -59,8 +59,8 @@ app.post('/login', loginController.post);
 app.get('/logout', loginController.logout);
 
 // API authentication
-app.use(`/${process.env.API_PATH}`, require('./routes/api'));
 app.post(`/${process.env.API_PATH}/authenticate`, loginController.postJWT);
+app.use(`/${process.env.API_PATH}`, require('./routes/api'));
 
 // Web routes
 app.use('/', require('./routes/web'));

@@ -10,7 +10,7 @@ const namedRoutes = require('../lib/namedRoutes');
 class LoginController {
   // GET "/"
   index (req, res, next) {
-    res.locals.email = process.env.NODE_ENV === 'development' ? 'user@example.com' : '';
+    res.locals.email = process.env.NODE_ENV === 'development' ? process.env.TEST_USER : '';
     res.locals.error = '';
     res.render('login');
   }

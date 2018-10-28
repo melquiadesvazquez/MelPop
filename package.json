@@ -8,11 +8,14 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "cross-env DEBUG=nodeapi:* NODE_ENV=development nodemon",
+    "cluster": "node ./bin/cluster",
     "installDB": "node install_db.js",
-    "thumbSrv": "node ./services/thumbnailService.js"
+    "thumbSrv": "node ./services/thumbnailService.js",
+    "test": "mocha --timeout 5000 ./test/*.test.js"
   },
   "dependencies": {
     "bcrypt": "^3.0.2",
+    "cluster": "^0.7.7",
     "connect-mongo": "^2.0.1",
     "cookie-parser": "~1.4.3",
     "cote": "^0.18.0",
@@ -32,12 +35,15 @@
     "sharp": "^0.21.0"
   },
   "devDependencies": {
+    "assert": "^1.4.1",
     "cross-env": "^5.2.0",
     "eslint": "^5.2.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^3.8.0",
-    "eslint-plugin-standard": "^3.1.0"
+    "eslint-plugin-standard": "^3.1.0",
+    "mocha": "^5.2.0",
+    "supertest": "^3.3.0"
   }
 }
