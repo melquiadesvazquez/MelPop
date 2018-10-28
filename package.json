@@ -1,5 +1,8 @@
 {
   "name": "melpop",
+  "engines": {
+    "node": ">=9.11.2"
+  },
   "version": "0.0.0",
   "private": true,
   "scripts": {
