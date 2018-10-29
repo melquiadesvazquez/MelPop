@@ -17,7 +17,7 @@ class LoginController {
 
   async post (req, res, next) {
     try {
-      // collect the parameters from the body of the request
+      // Collect the parameters from the body of the request
       const email = req.body.email;
       const password = req.body.password;
 
