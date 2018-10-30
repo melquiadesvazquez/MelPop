@@ -13,7 +13,7 @@ responder.on('generate thumbnail', (req, done) => {
   console.log('service: thumbnail from', req.picture, req.resize, Date.now());
 
   const imgDir = path.join(__dirname, '..', 'public/images/ads');
-  // sharp.cache(false);
+
   sharp(`${imgDir}/${req.picture}`)
     .resize(req.resize, req.resize)
     .toFile(`${imgDir}/thumbnails/${req.picture}`)
@@ -25,4 +25,6 @@ responder.on('generate thumbnail', (req, done) => {
       console.log('service problem:', err);
       done(err);
     });
+
+  sharp.cache(false);
 });

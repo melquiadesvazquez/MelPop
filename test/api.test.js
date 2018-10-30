@@ -11,7 +11,7 @@ const subscriber = new cote.Subscriber({name: 'thumbnail subscriber'});
 require('dotenv').config();
 
 // run thumbnail microservice in a new window
-exec('start cmd.exe @cmd /k "npm run thumbSrv"');
+exec('npm run thumbSrv');
 
 // loading the app for testing
 const app = require('../app');
@@ -180,28 +180,20 @@ describe(`DELETE /ads/:id`, function () {
         expect(res.body.success).to.be.equal(true);
         expect(res.body).to.have.property('result');
 
-        // delete image from file system
         const imgBase = path.parse(ad.picture).base;
+
         // once the microservice has finished we can delete the thumbnail
         subscriber.on('generate thumbnail done', (update) => {
-
-          console.log("++++++++++++++++++")
-          console.log("before image done")
-          console.log("++++++++++++++++++")
+          // delete image from file system
           fs.unlink(`${imgDir}/${imgBase}`, (err) => {
             if (err) throw err;
 
-            setTimeout(() => done(), 5000);
-            console.log("++++++++++++++++++")
-            console.log("before thumbnail done")
-            console.log("++++++++++++++++++")
-
-              /*
-              fs.unlink(`${imgDir}/thumbnails/${imgBase}`, (err) => {
-                if (err) throw err;
-                setTimeout(() => process.exit(), 5000);
-              });
-              */
+            // delete the thumbnail
+            fs.unlink(`${imgDir}/thumbnails/${imgBase}`, (err) => {
+              if (err) throw err;
+              setTimeout(() => process.exit(1), 1000);
+              done();
+            });
           });
         });
       });
