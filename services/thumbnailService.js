@@ -26,5 +26,6 @@ responder.on('generate thumbnail', (req, done) => {
       done(err);
     });
 
+  // Disable cache so the file doesn't get blocked when deleted on the api test
   sharp.cache(false);
 });

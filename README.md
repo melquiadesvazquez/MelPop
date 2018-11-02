@@ -1,10 +1,15 @@
 # Melpop
 
-[![MIT License][license-image]][license-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
-Website and API to handle second hand products built with Nodejs, Express and MongoDB.
+Website and API to handle second hand products built with Nodejs, Express and MongoDB with some additional libraries:
 
-Live demo available on https://melpop.herokuapp.com/
++ Authentication has been implemented using [Express Session](https://github.com/expressjs/session), [Connect Mongo](https://github.com/jdesboeufs/connect-mongo), JSON Web Token ([JWT](https://github.com/auth0/node-jsonwebtoken)) and [bcrypt](https://github.com/kelektiv/node.bcrypt.js)
++ Internationalization has been managed by i18n <https://github.com/mashpie/i18n-node>
++ Microservices has been created by Cote <https://github.com/dashersw/cote>
++ Testing has been done with [Mocha](https://github.com/mochajs/mocha) and [Chai](https://github.com/chaijs/chai)
+
+The live demo is available on https://melpop.herokuapp.com/
 
 ## Prerequisites
 
@@ -54,6 +59,14 @@ Open your browser and go to:
 + Website &ndash; http://localhost:3003/ads/
 + API &ndash; http://localhost:3003/apiv1/ads
 
+## Authentication
+
+Authentication has been implemented using [Express Session](https://github.com/expressjs/session), [Connect Mongo](https://github.com/jdesboeufs/connect-mongo), JSON Web Token ([JWT](https://github.com/auth0/node-jsonwebtoken)) and [bcrypt](https://github.com/kelektiv/node.bcrypt.js)
+
+You can access the website using the default credentials: user@example.com and 1234
+
+In order to get access to the API, after you login on the website, you need to click the API button on the top menu and copy the url, which has already included the JWT token.
+
 ## Url parameters
 
 The web app will show a list of ads and will alow to search and filter with different criteria, the available filters are:
@@ -75,9 +88,59 @@ The four primary or most-commonly-used HTTP methods are implemented:
 + DELETE &ndash; deleting an ad
 + PUT  &ndash; updating an ad
 
+## Internationalization
+Internationalization has been managed by i18n <https://github.com/mashpie/i18n-node> and the available languages are English (default) and Spanish. There is a language switcher on the top menu.
+
+## Microservices
+A microservice to generate automatically a thumbnail for new uploaded products has been created by Cote <https://github.com/dashersw/cote>
+
+The service can be run separately from the main application using
+
+```sh
+npm run thumbSrv
+```
+
 ## Testing
 
+Automatic tests has been created and can be executed with:
+
+```sh
+npm test
+```
+
 Check the live demo [here](https://melpop.herokuapp.com/)
+
+Authentication posting these credentials for both Website and API: user@example.com and 1234
+
++ Website &ndash; <http://localhost:3003/login>
+
+![MelPop web version](https://raw.githubusercontent.com/melquiadesvazquez/MelPop/master/public/images/misc/web1.jpg)
+
++ API &ndash; <http://localhost:3003/apiv1/authenticate>
+
+For the future, the obtained JWT token must be included as a parameter, otherwise the following error will be returned:
+
+```json
+{
+"success": false,
+"error": "missing authorization token"
+}
+```
+
+If an invalid token has been used, the following error will be returned:
+
+```json
+{
+"success": false,
+"error": "invalid authorization token"
+}
+```
+
+Creating a new ad
+
++ Website &ndash; <http://localhost:3003/new>
+
+![MelPop web version](https://raw.githubusercontent.com/melquiadesvazquez/MelPop/master/public/images/misc/web2.jpg)
 
 Showing all the ads listing 6 by page (default):
 
@@ -218,6 +281,12 @@ Updating a product:
     }
     ```
 
+## BONUS TRACK! - Creating an NPM module
+
+The following module has been created on NPM:
+
+> [Free Wifi Madrid](https://www.npmjs.com/package/freewifimadrid): Nodejs library to find free Wi-Fi hotspots around a location in Madrid
+
 ## Built with
 
 + [Nodejs](https://nodejs.org/) - JavaScript run-time environment
@@ -229,11 +298,13 @@ Updating a product:
 
 + Both the website and API will shown a maximum of 6 items per page with 24 in total, this can be changed on the .env file
 
-
 ## License
 
-[MIT][license-url]
+MIT © [Melquiades Vazquez](https://github.com/melquiadesvazquez)
 
-
-[license-image]: http://img.shields.io/badge/license-MIT-blue.svg?style=flat
-[license-url]: LICENSE
+[npm-image]: https://badge.fury.io/js/emtmadrid-lib.svg
+[npm-url]: https://npmjs.org/package/emtmadrid-lib
+[travis-image]: https://travis-ci.org/melquiadesvazquez/melpop.svg?branch=master
+[travis-url]: https://travis-ci.org/melquiadesvazquez/melpop
+[daviddm-image]: https://david-dm.org/melquiadesvazquez/melpop.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/melquiadesvazquez/melpop
