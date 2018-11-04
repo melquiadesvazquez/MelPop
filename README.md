@@ -1,6 +1,6 @@
 # Melpop
 
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+[![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
 Website and API to handle second hand products built with Nodejs, Express and MongoDB with some additional libraries:
 
@@ -310,7 +310,5 @@ MIT © [Melquiades Vazquez](https://github.com/melquiadesvazquez)
 
 [npm-image]: https://badge.fury.io/js/emtmadrid-lib.svg
 [npm-url]: https://npmjs.org/package/emtmadrid-lib
-[travis-image]: https://travis-ci.org/melquiadesvazquez/melpop.svg?branch=master
-[travis-url]: https://travis-ci.org/melquiadesvazquez/melpop
 [daviddm-image]: https://david-dm.org/melquiadesvazquez/melpop.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/melquiadesvazquez/melpop
