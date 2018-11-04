@@ -5,9 +5,9 @@
 Website and API to handle second hand products built with Nodejs, Express and MongoDB with some additional libraries:
 
 + Authentication has been implemented using [Express Session](https://github.com/expressjs/session), [Connect Mongo](https://github.com/jdesboeufs/connect-mongo), JSON Web Token ([JWT](https://github.com/auth0/node-jsonwebtoken)) and [bcrypt](https://github.com/kelektiv/node.bcrypt.js)
-+ Internationalization has been managed by i18n <https://github.com/mashpie/i18n-node>
-+ Microservices has been created by Cote <https://github.com/dashersw/cote>
-+ Testing has been done with [Mocha](https://github.com/mochajs/mocha) and [Chai](https://github.com/chaijs/chai)
++ Internationalization has been managed by [i18n](https://github.com/mashpie/i18n-node)
++ Microservices has been created by [Cote](https://github.com/dashersw/cote)
++ Testing has been done with [Mocha](https://github.com/mochajs/mocha), [Chai](https://github.com/chaijs/chai) and [Supertest](https://github.com/visionmedia/supertest)
 
 The live demo is available on https://melpop.herokuapp.com/
 
@@ -89,10 +89,10 @@ The four primary or most-commonly-used HTTP methods are implemented:
 + PUT  &ndash; updating an ad
 
 ## Internationalization
-Internationalization has been managed by i18n <https://github.com/mashpie/i18n-node> and the available languages are English (default) and Spanish. There is a language switcher on the top menu.
+Internationalization has been managed by [i18n](https://github.com/mashpie/i18n-node) and the available languages are English (default) and Spanish. There is a language switcher on the top menu.
 
 ## Microservices
-A microservice to generate automatically a thumbnail for new uploaded products has been created by Cote <https://github.com/dashersw/cote>
+A microservice to generate automatically a thumbnail for new uploaded products has been created by [Cote](https://github.com/dashersw/cote) and [Sharp](https://github.com/lovell/sharp)
 
 The service can be run separately from the main application using
 
@@ -293,6 +293,12 @@ The following module has been created on NPM:
 + [Express](http://expressjs.com/) - Web application framework for Node.js
 + [MongoDB](https://www.mongodb.com/) - NoSQL document-oriented database program
 + [Bootstrap](https://getbootstrap.com/) - Front-end framework with CSS templates as well as JavaScript extensions
++ [i18n](https://github.com/mashpie/i18n-node) - Lightweight simple translation module for Node.js
++ [Cote](https://github.com/dashersw/cote) - Library for building zero-configuration microservices
++ [Sharp](https://github.com/lovell/sharp) - High performance Node.js image processing
++ [Mocha](https://github.com/mochajs/mocha) - Javascript test framework for Node.js
++ [Chai](https://github.com/chaijs/chai) - BDD / TDD assertion framework for node.js
++ [Supertest](https://github.com/visionmedia/supertest) - Super-agent driven library for testing node.js HTTP servers using a fluent API
 
 ## Restrictions
 
