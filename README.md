@@ -110,7 +110,7 @@ npm test
 
 Check the live demo [here](https://melpop.herokuapp.com/)
 
-Authentication posting these credentials for both Website and API: user@example.com and 1234
+Authenticate posting these credentials for both Website and API: user@example.com and 1234
 
 + Website &ndash; <http://localhost:3003/login>
 
