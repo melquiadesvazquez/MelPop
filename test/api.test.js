@@ -195,7 +195,7 @@ describe(`DELETE /ads/:id`, function () {
               done();
             });
           });
-        });
+        }).catch(done);
       });
   });
 });
