@@ -191,7 +191,7 @@ describe(`DELETE /ads/:id`, function () {
             // delete the thumbnail
             fs.unlink(`${imgDir}/thumbnails/${imgBase}`, (err) => {
               if (err) throw err;
-              setTimeout(() => process.exit(1), 1000);
+              // setTimeout(() => process.exit(1), 1000);
               done();
             });
           });
